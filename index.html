@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blorbmart Ads Portal - Promote Your Business</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Blorbmart Ads</a>
+            <nav class="main-nav">
+                <a href="#">Dashboard</a>
+                <a href="#">Campaigns</a>
+                <a href="#">Analytics</a>
+                <div class="user-dropdown">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                </div>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Dashboard Summary -->
+        <section class="dashboard-summary">
+            <h1>Welcome back, Business Name!</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Impressions</h3>
+                    <p class="stat-value">1,240</p>
+                    <p class="stat-change">↑ 12% from last week</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Clicks</h3>
+                    <p class="stat-value">86</p>
+                    <p class="stat-change">↑ 8% from last week</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Spend</h3>
+                    <p class="stat-value">$24.50</p>
+                    <p class="stat-change">↓ 3% from last week</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create New Ad CTA -->
+        <section class="create-ad-cta">
+            <div class="cta-content">
+                <h2>Ready to reach more students?</h2>
+                <p>Your ad will be seen by 10,000+ active shoppers</p>
+                <button class="cta-button" id="startAdBtn">Create New Ad →</button>
+            </div>
+        </section>
+
+        <!-- Ad Creation Modal (Hidden by default) -->
+        <div class="modal-overlay" id="adModal">
+            <div class="modal-content">
+                <button class="close-modal" id="closeModal">&times;</button>
+                
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">1. Ad Type</div>
+                    <div class="step" data-step="2">2. Design</div>
+                    <div class="step" data-step="3">3. Audience</div>
+                    <div class="step" data-step="4">4. Budget</div>
+                </div>
+
+                <!-- Step 1: Ad Type Selection -->
+                <div class="modal-step active" data-step="1">
+                    <h2>Choose your ad format</h2>
+                    <div class="ad-type-options">
+                        <div class="ad-type-card" data-type="banner">
+                            <div class="ad-type-icon">🖼️</div>
+                            <h3>Banner Ad</h3>
+                            <p>Appears on homepage and category pages</p>
+                            <p class="ad-price">From $5/day</p>
+                        </div>
+                        <div class="ad-type-card" data-type="sponsored">
+                            <div class="ad-type-icon">⭐</div>
+                            <h3>Sponsored Product</h3>
+                            <p>Top placement in search results</p>
+                            <p class="ad-price">From $10/day</p>
+                        </div>
+                        <div class="ad-type-card" data-type="video">
+                            <div class="ad-type-icon">🎥</div>
+                            <h3>Video Ad</h3>
+                            <p>15-second clips between browsing</p>
+                            <p class="ad-price">From $15/day</p>
+                        </div>
+                    </div>
+                    <button class="next-step-button" data-next="2">Next →</button>
+                </div>
+
+                <!-- Step 2: Ad Design -->
+                <div class="modal-step" data-step="2">
+                    <h2>Design your ad</h2>
+                    <div class="ad-design-container">
+                        <div class="image-upload-box" id="dropZone">
+                            <p>Drag & drop your image here</p>
+                            <p class="subtext">Recommended size: 1200×600px</p>
+                            <input type="file" id="imageUpload" accept="image/*">
+                        </div>
+                        <div class="ad-preview">
+                            <h3>Live Preview</h3>
+                            <div class="preview-container" id="adPreview">
+                                <!-- Preview will render here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="back-step-button" data-back="1">← Back</button>
+                        <button class="next-step-button" data-next="3">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Audience Targeting -->
+                <div class="modal-step" data-step="3">
+                    <h2>Target your audience</h2>
+                    <div class="targeting-options">
+                        <div class="targeting-group">
+                            <label>Location</label>
+                            <select>
+                                <option>All Campuses</option>
+                                <option>University of Lagos</option>
+                                <option>Osun state University</option>
+                                <option>University of Ilorin</option>
+                                <option>kwara state University</option>
+                                <option>Adeleke University</option>
+                                <option>Ekiti state University</option>
+                                <option>Lagos state University</option>
+                                <option>UNN</option>
+                                <option>UI</option>
+                            </select>
+                        </div>
+                        <div class="targeting-group">
+                            <label>Student Interests</label>
+                            <div class="interest-tags">
+                                <span class="tag">Electronics</span>
+                                <span class="tag">Fashion</span>
+                                <span class="tag">Books</span>
+                                <span class="tag">Food</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="back-step-button" data-back="2">← Back</button>
+                        <button class="next-step-button" data-next="4">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Budget and Payment -->
+                <div class="modal-step" data-step="4">
+                    <h2>Set your budget</h2>
+                    <div class="budget-container">
+                        <div class="budget-slider">
+                            <label>Daily Budget: <span id="budgetValue">$20</span></label>
+                            <input type="range" min="5" max="100" value="20" id="budgetSlider">
+                            <div class="slider-labels">
+                                <span>$5</span>
+                                <span>$100</span>
+                            </div>
+                        </div>
+                        <div class="budget-estimate">
+                            <p>Estimated reach: <strong>~2,400 students/day</strong></p>
+                        </div>
+                        <div class="payment-methods">
+                            <h3>Payment Method</h3>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" checked>
+                                    <span>Credit/Debit Card</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment">
+                                    <span>Bank Transfer</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="back-step-button" data-back="3">← Back</button>
+                        <button class="cta-button" id="launchAdBtn">Launch Ad Campaign</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Blorbmart Ads. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Help Center</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
